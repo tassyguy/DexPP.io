@@ -3,37 +3,125 @@
 <head>
 
 	<!-- PokeSprite -->
-	<link type="text/css" href="src/pokesprite.min.css" rel="stylesheet" media="screen" />
-	<script charset="utf-8" src="src/pokesprite.min.js" ></script>
+	<link type="text/css" href="src/node_modules/pokesprite/pokesprite.min.css" rel="stylesheet" media="screen" />
+	<script src="src/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-	<link rel="manifest" href="favicons/manifest.json">
-	<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#ee1515">
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="src/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="src/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="src/favicons/favicon-16x16.png">
+	<link rel="manifest" href="src/favicons/manifest.json">
+	<link rel="mask-icon" href="src/favicons/safari-pinned-tab.svg" color="#ee1515">
 	<meta name="apple-mobile-web-app-title" content="Dex++">
 	<meta name="application-name" content="Dex++">
 	<meta name="theme-color" content="#ee1515">
-
 	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://example.com/feed">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script src="src/node_modules/pokesprite/pokesprite.min.js" type="text/javascript" charset="utf-8" async defer></script>
+  	<script charset="utf-8" src="src/node_modules/oakdex-pokedex/src/oakdex_pokedex.js" ></script>
+
+
+	<!-- OneSignal -->
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+	<script>
+	    var OneSignal = window.OneSignal || [];
+	    OneSignal.push(["init", {
+	      appId: "8f877e88-722d-46db-984d-6b0b658eb805",
+	      autoRegister: false, /* Set to true to automatically prompt visitors */
+	      httpPermissionRequest: {
+	        enable: true
+	      },
+	      notifyButton: {
+	          enable: true /* Set to false to hide */
+	      }
+	    }]);
+	</script>
 
 </head>
+
 <body>
-	<h1>Experiments</h1>
-	<p>Come back later</p>
-	<a class="icon"><span id="icon_18" class="pkspr pkmn-squirtle"></span><script>PkSpr.decorate('icon_18');</script></a>
-	<a class="icon"><span id="icon_328" class="pkspr pkmn-kangaskhan form-mega"></span><script>PkSpr.decorate('icon_328');</script></span></a>
-	<p id="demo"></p>
 
-	<script>
-		var text = '{"employees":[' +
-		'{"firstName":"John","lastName":"Doe" },' +
-		'{"firstName":"Anna","lastName":"Smith" },' +
-		'{"firstName":"Peter","lastName":"Jones" }]}';
+	<!-- Navigation -->
+    <nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                        
+      			</button>
+      		<a class="navbar-brand" href="#"><img src="src/favicons/favicon-32x32.png"></a>
+    	</div>
+    	<div class="collapse navbar-collapse" id="myNavbar">
+      		<ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Home</a></li>
+		        <!--
+		        <li><a href="#">Team Builder</a></li>
+		        <li><a href="#">Map?</a></li>
+		    	-->
+		      </ul>
+		      
+		      <!-- Change to Option List -->
+		      <ul class="nav navbar-nav navbar-right">
+		      	<li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-list"></span> Generation<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#"><span class="pkspr pkmn-bulbasaur"></span>Generation 1</a></li>
+		            <li><a href="#"><span class="pkspr pkmn-chikorita"></span>Generation 2</a></li>
+		            <li><a href="#"><span class="pkspr pkmn-treecko"></span>Generation 3</a></li>
+		            <li><a href="#"><span class="pkspr pkmn-turtwig"></span>Generation 4</a></li>
+		            <li><a href="#"><span class="pkspr pkmn-snivy"></span>Generation 5</a></li>
+		            <li><a href="#"><span class="pkspr pkmn-chespin"></span>Generation 6</a></li>
+		            <li><a href="#"><span class="pkspr pkmn-rowlet"></span>Generation 7</a></li>
+		            <!--<li><a href="#">Generation 8</a></li>-->
+		          </ul>
+		        </li>
 
-		obj = JSON.parse('src/data/pokemon/abomasnow.json');
-		document.getElementById("demo").innerHTML =
-		obj.names["en"];
+		        <!-- Search -->
+		        <!--
+		        <li>
+			        <form class="navbar-form navbar-left">
+	      				<div class="input-group">
+		        			<input type="text" class="form-control" placeholder="Search">
+		        			<div class="input-group-btn">
+			          			<button class="btn btn-default" type="submit">
+			            			<i class="glyphicon glyphicon-search"></i>
+			          			</button>
+		        			</div>
+		      			</div>
+	    			</form>
+    			</li>
+    			-->
+		      	<!--
+		        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		    	-->
+		      </ul>
+		    </div>
+		</div>
+	</nav>
+  
+	<div class="container">
+		<h3>Select Pokemon and stuff or filters</h3>
+		<p>This part will populate with all the info about the Pokemon selected.
+		<p>Generational filters can help make it so only certain shit shows when neccessary.
+	  	<p>Show a QR code? Testing is below.</p>
+	</div>
+
+	<div class="container">
+		<h3>Placeholder for Pokemon Name</h3>
+		<p>This part will populate with all the info about the Pokemon selected.
+		<p>Generational filters can help make it so only certain shit shows when neccessary.
+	  	<p>Show a QR code? Testing is below.</p>
+	</div>
+
+	<script type="text/javascript">
+		PkSpr.process_dom();
 	</script>
+
 </body>
 </html>
