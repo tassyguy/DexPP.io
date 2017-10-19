@@ -4,7 +4,9 @@
 
 	<!-- PokeSprite -->
 	<link type="text/css" href="src/node_modules/pokesprite/pokesprite.min.css" rel="stylesheet" media="screen" />
+  <link rel="stylesheet" type="text/css" href="src/css/style.css">
 	<script src="src/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="src/js/style.js" type="text/javascript" charset="utf-8" async defer></script>
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="src/favicons/apple-touch-icon.png">
@@ -109,19 +111,33 @@
 		<h3>Select Pokemon and stuff or filters</h3>
 		<p>This part will populate with all the info about the Pokemon selected.
 		<p>Generational filters can help make it so only certain shit shows when neccessary.
-	  	<p>Show a QR code? Testing is below.</p>
+	  <p>Show a QR code? Testing is below.</p>
 	</div>
 
 	<div class="container">
-		<h3>Placeholder for Pokemon Name</h3>
-		<p>This part will populate with all the info about the Pokemon selected.
-		<p>Generational filters can help make it so only certain shit shows when neccessary.
-	  	<p>Show a QR code? Testing is below.</p>
+		<h3 id="name"></h3>
+		<p id="number">
+		<p id="type">
+		<p id="moves">
+    <p id="evolutions"></p>
+    <button type="button" onclick="setup()">Load info</button>
 	</div>
 
 	<script type="text/javascript">
 		PkSpr.process_dom();
 	</script>
+
+
+	<!-- Test JS
+
+	<script>
+	var myObj = {Insert JSON code here}
+	document.getElementById("demo").innerHTML += myObj.names.en + "<br>";
+	//or:
+	document.getElementById("type").innerHTML += myObj.types;
+	</script>
+
+	End Test JS -->
 
 </body>
 </html>
